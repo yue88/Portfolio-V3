@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Portfolio - Octave LEJEUNE</title>
+</head>
+
+<body class="page-body">
+  <div class="background-wrapper">
+    <div class="background-glow"></div>
+  </div>
+  <main class="content-wrapper">
+
+    <header class="nav-header">
+      <nav class="nav-bar">
+        <div class="nav-inner">
+
+          <span class="nav-brand">PORTFOLIO DE
+            <span class="nav-brand-red">OCTAVE</span> 
+          </span>
+
+
+          <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Ouvrir le menu"/>
+
+          <label class="nav-hamburger" for="nav-toggle">
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+              <path
+                class="hamburger-line hamburger-line-top-bottom"
+                d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+              ></path>
+              <path
+                class="hamburger-line"
+                d="M7 16 27 16"
+              ></path>
+            </svg>
+          </label>
+          <div class="nav-menu">
+            <button class="nav-item" data-target="section-home">HOME</button>
+            <button class="nav-item" data-target="section-projects">PROJETS</button>
+            <button class="nav-item" data-target="section-abtme">ABOUT ME</button>
+            <button class="nav-item" data-target="section-contact">CONTACT</button>
+          </div>
+
+        </div>
+      </nav>
+    </header>
+
+
+    <script>
+      document.querySelectorAll(".nav-item").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const id = btn.getAttribute("data-target");
+          const el = document.getElementById(id);
+          if (el) el.scrollIntoView({ behavior: "smooth" });
+        });
+      });
+    </script>
+
+
+    <h1 class="hero-title">
+      <span class="hero-title-highlight">PORTFOLIO</span><br>
+      <span class="hero-title-main">DE</span><br>
+      <span class="hero-title-main">OCTAVE LEJEUNE</span><br>
+
+    <span class="hero-subtitle">
+      WEB · Frontend · Backend
+    </span> 
+    </h1>
+
+    <section class="projects-section" id="section-projects">
+      <div class="projects-header">
+        <span class="projects-label">RÉALISATIONS</span>
+        <h2 class="projects-title">Projets <span>Choisis</span></h2>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card">Projet 1</article>
+        <article class="project-card">Projet 2</article>
+        <article class="project-card">Projet 3</article>
+        <article class="project-card">Projet 4</article>
+      </div>
+    </section>
+
+
+
+
+    <section class="section-contact">
+      <form action="GET" class="form-contact">
+
+        <div class="form-container">
+
+          <div class="nom-mail">
+            <input placeholder="Nom" type="text" name="nom" id="nom">
+            <input placeholder="Prénom" type="text" name="Prenom" id="prenom">
+          </div>
+
+          <div class="objet-text">
+            <input placeholder="E-mail" type="email" name="email" id="email">
+            <textarea placeholder="Votre message" name="message" id="message"></textarea>
+            <input type="submit" name="submit_btn" id="submit">
+          </div>
+
+        </div>
+      </form>
+    </section>
+
+
+  </main>
+</body>
+
+</html>
