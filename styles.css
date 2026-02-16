@@ -81,7 +81,7 @@
   background: none;
   border: none;
   cursor: pointer;
-
+  text-decoration: none;
   font-size: 0.85rem;
   font-weight: 300;
   letter-spacing: 0.18em;
@@ -664,6 +664,48 @@ body {
   color: #71717a;
   font-size: 0.85rem;
 }
+
+
+.alert {
+  margin-top: 0.2rem;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  border: 1px solid #27272a;
+  background: #0f0f0f;
+  color: #f4f4f5;
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+.alert-success {
+  border-color: #16a34a;
+  color: #bbf7d0;
+  background: rgba(22, 163, 74, 0.12);
+}
+
+.alert-error {
+  border-color: #dc2626;
+  color: #fecaca;
+  background: rgba(220, 38, 38, 0.12);
+}
+
+
+.page-fade {
+  opacity: 1;
+  transition: opacity 220ms ease;
+}
+
+.page-fade.is-leaving {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-fade {
+    transition: none;
+  }
+}
+
 
 @media (max-width: 900px) {
   .about-inner {

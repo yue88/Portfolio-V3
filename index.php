@@ -74,6 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['envoyer'])) {
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -84,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['envoyer'])) {
   <title>Portfolio - Octave LEJEUNE</title>
 </head>
 
-<body class="page-body " id="section-home">
+<body class="page-body page-fade" id="section-home">
   <div class="background-wrapper">
     <div class="background-glow"></div>
   </div>
@@ -110,26 +111,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['envoyer'])) {
             </svg>
           </label>
           <div class="nav-menu">
-            <button class="nav-item" data-target="section-home">HOME</button>
-            <button class="nav-item" data-target="section-projects">PROJETS</button>
-            <button class="nav-item" data-target="section-abtme">ABOUT ME</button>
-            <button class="nav-item" data-target="section-contact">CONTACT</button>
+            <button type="button" class="nav-item" data-target="section-home">HOME</button>
+            <button type="button" class="nav-item" data-target="section-projects">PROJETS</button>
+            <button type="button" class="nav-item" data-target="section-abtme">ABOUT ME</button>
+            <button type="button" class="nav-item" data-target="section-contact">CONTACT</button>
           </div>
 
         </div>
       </nav>
     </header>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.remove("is-leaving");
 
-    <script>
-      document.querySelectorAll(".nav-item").forEach(btn => {
-        btn.addEventListener("click", () => {
-          const id = btn.getAttribute("data-target");
-          const el = document.getElementById(id);
-          if (el) el.scrollIntoView({ behavior: "smooth" });
-        });
-      });
-    </script>
+  document.querySelectorAll(".nav-item").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const id = btn.getAttribute("data-target");
+      if (!id) return;
+
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+        history.replaceState(null, "", "#" + id);
+      }
+
+      const toggle = document.getElementById("nav-toggle");
+      if (toggle) toggle.checked = false;
+    });
+  });
+
+  const hash = window.location.hash.replace("#", "");
+  if (hash) {
+    const el = document.getElementById(hash);
+    if (el) setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 50);
+  }
+});
+</script>
+
+
+
 
 
     <h1 class="hero-title">
