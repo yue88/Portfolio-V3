@@ -570,6 +570,28 @@ body {
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
 }
 
+.contact-status {
+  margin-bottom: 1.25rem;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  border: 1px solid #27272a;
+  background: #0f0f0f;
+  color: #f4f4f5;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+}
+
+.contact-status.is-success {
+  border-color: #16a34a;
+  color: #bbf7d0;
+  background: rgba(22, 163, 74, 0.12);
+}
+
+.contact-status.is-error {
+  border-color: #dc2626;
+  color: #fecaca;
+  background: rgba(220, 38, 38, 0.12);
+}
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -653,7 +675,29 @@ body {
     padding: 2.25rem;
   }
 
-  .contact-submit {
+  .contact-status {
+  margin-bottom: 1.25rem;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  border: 1px solid #27272a;
+  background: #0f0f0f;
+  color: #f4f4f5;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+}
+
+.contact-status.is-success {
+  border-color: #16a34a;
+  color: #bbf7d0;
+  background: rgba(22, 163, 74, 0.12);
+}
+
+.contact-status.is-error {
+  border-color: #dc2626;
+  color: #fecaca;
+  background: rgba(220, 38, 38, 0.12);
+}
+.contact-submit {
     width: 100%;
     text-align: center;
   }

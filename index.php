@@ -1,3 +1,79 @@
+<?php
+
+session_start();
+
+ini_set('display_errors', '1');
+error_reporting(E_ALL);
+
+if (empty($_SESSION['csrf'])) {
+  $_SESSION['csrf'] = bin2hex(random_bytes(32));
+}
+
+$success = null;
+$error = null;
+
+function post(string $key): string {
+  return trim((string)($_POST[$key] ?? ''));
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['envoyer'])) {
+
+  if (!empty($_POST['website'] ?? '')) {
+    $error = "Erreur lors de l'envoi.";
+  }
+  else if (!isset($_POST['csrf']) || !hash_equals($_SESSION['csrf'], (string)$_POST['csrf'])) {
+    $error = "Session expirée, merci de recharger la page.";
+  } else {
+
+    $lastName  = post('last_name');
+    $firstName = post('first_name');
+    $email     = post('email');
+    $subject   = post('subject');
+    $message   = post('message');
+
+    if ($lastName === '' || $firstName === '' || $message === '' || $email === '') {
+      $error = "Merci de remplir tous les champs requis.";
+    } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $error = "E-mail invalide.";
+    } else if (mb_strlen($message) > 5000) {
+      $error = "Message trop long (max 5000 caractères).";
+    } else {
+
+      $to = 'octavelejeune80@gmail.com';
+
+      $safeSubject = $subject !== '' ? $subject : 'Nouveau message (formulaire de contact)';
+      $safeSubject = preg_replace("/[\r\n]+/", ' ', $safeSubject);
+
+      $body =
+        "Nouveau message depuis le formulaire :\n\n"
+        . "Nom : {$lastName}\n"
+        . "Prénom : {$firstName}\n"
+        . "Email : {$email}\n"
+        . "Objet : {$safeSubject}\n\n"
+        . "Message :\n{$message}\n";
+
+      $headers = [];
+      $headers[] = 'MIME-Version: 1.0';
+      $headers[] = 'Content-Type: text/plain; charset=UTF-8';
+      $headers[] = 'From: Formulaire de contact <no-reply@octavelejeunealwaysdata.net>';
+      $headers[] = 'Reply-To: ' . $email;
+
+      $sent = mail($to, $safeSubject, $body, implode("\r\n", $headers));
+
+      if ($sent) {
+        $success = "Message envoyé. Merci !";
+        $_SESSION['csrf'] = bin2hex(random_bytes(32));
+      } else {
+        $error = "Impossible d'envoyer le message pour le moment.";
+      }
+    }
+  }
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -215,33 +291,51 @@
       <span class="contact-label">FORMULAIRE DE CONTACT</span>
       <div class="contact-inner">
         <form class="contact-form" method="post">
+
+          <div style="position:absolute; left:-9999px; top:-9999px;">
+            <label for="website">Website</label>
+            <input type="text" name="website" id="website" autocomplete="off">
+          </div>
+
+
+          <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf']) ?>">
+
           <div class="field-row">
             <div class="field">
               <label for="last-name">Nom</label>
-              <input type="text" name="last_name" id="last-name" autocomplete="family-name" required>
+              <input type="text" name="last_name" id="last-name" autocomplete="family-name" required value="<?= htmlspecialchars($_POST['last_name'] ?? '') ?>">
             </div>
             <div class="field">
               <label for="first-name">Prénom</label>
-              <input type="text" name="first_name" id="first-name" autocomplete="given-name" required>
+              <input type="text" name="first_name" id="first-name" autocomplete="given-name" required value="<?= htmlspecialchars($_POST['first_name'] ?? '') ?>">
             </div>
           </div>
 
           <div class="field">
             <label for="email">E-mail</label>
-            <input type="email" name="email" id="email" autocomplete="email" required>
+            <input type="email" name="email" id="email" autocomplete="email" required value="<?= htmlspecialchars($_POST['email'] ?? '') ?>">
           </div>
 
           <div class="field">
             <label for="subject">Objet</label>
-            <input type="text" name="subject" id="subject">
+            <input type="text" name="subject" id="subject" value="<?= htmlspecialchars($_POST['subject'] ?? '') ?>">
           </div>
 
           <div class="field">
             <label for="message">Message</label>
-            <textarea name="message" id="message" rows="6" required></textarea>
+            <textarea name="message" id="message" rows="6" required><?= htmlspecialchars($_POST['message'] ?? '') ?></textarea>
           </div>
 
-          <button class="contact-submit" type="submit">Envoyer le message</button>
+          <?php if ($success): ?>
+            <div class="alert alert-success"><?= htmlspecialchars($success) ?></div>
+          <?php endif; ?>
+
+          <?php if ($error): ?>
+            <div class="alert alert-error"><?= htmlspecialchars($error) ?></div>
+          <?php endif; ?>
+
+
+          <button class="contact-submit" name="envoyer" type="submit">Envoyer le message</button>
           <p class="contact-note">Réponse sous 24 à 48h.</p>
         </form>
       </div>
@@ -250,5 +344,6 @@
 
   </main>
 </body>
+
 
 </html>
