@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+    </filter>
+  </defs>
+
+  <!-- fond -->
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="#000000"/>
+
+  <!-- halo rouge discret -->
+  <circle cx="46" cy="18" r="14" fill="#dc2626" opacity="0.25" filter="url(#glow)"/>
+  <circle cx="46" cy="18" r="10" fill="#dc2626" opacity="0.12"/>
+
+  <!-- OL centré (shift gauche + léger shift haut) -->
+  <g transform="translate(-3,-2)">
+    <!-- O -->
+    <circle cx="24" cy="34" r="10" fill="none" stroke="#dc2626" stroke-width="6" stroke-linecap="round"/>
+    <!-- L -->
+    <path d="M44 23 v22 h12"
+          fill="none" stroke="#dc2626" stroke-width="6"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

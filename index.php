@@ -82,6 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['envoyer'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="IMG/favicon.svg">
   <title>Portfolio - Octave LEJEUNE</title>
 </head>
 
@@ -170,10 +171,23 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
 
       <div class="projects-grid">
-        <a href="projet_aide_et_vous.php" class="project-card">Projet 1</a>
-        <a href="projet_retro_revival.php" class="project-card">Projet 2</a>
-        <a href="projet.php" class="project-card">Projet 3</a>
-        <a href="projet.php" class="project-card">Projet 4</a>
+
+        <a href="projet_aide_et_vous.php" class="project-card">
+          <img src="IMG/aideetvous.png" alt="Projet Aide&Vous">
+        </a>
+
+        <a href="projet_retro_revival.php" class="project-card">
+          <img src="IMG/RetroRevival/homepage.png" alt="Projet Retro Revival">
+        </a>
+        
+        <a href="projet_aide_et_vous.php" class="project-card">
+          <img src="IMG/aideetvous.png" alt="Projet Aide&Vous">
+        </a>
+
+        <a href="projet_retro_revival.php" class="project-card">
+          <img src="IMG/RetroRevival/register.png" alt="Projet Retro Revival">
+        </a>
+
       </div>
     </section>
     <section class="about-section" id="section-abtme">
