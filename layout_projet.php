@@ -18,9 +18,9 @@
             <nav class="nav-bar">
                 <div class="nav-inner">
 
-                    <span class="nav-brand">PORTFOLIO DE
-                        <span class="nav-brand-red">OCTAVE</span>
-                    </span>
+                <span class="nav-brand">OCTAVE
+                    <span class="nav-brand-red">LEJEUNE</span>
+                </span>
 
 
                     <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Ouvrir le menu" />

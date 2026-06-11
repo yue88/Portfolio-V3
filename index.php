@@ -96,8 +96,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['envoyer'])) {
       <nav class="nav-bar">
         <div class="nav-inner">
 
-          <span class="nav-brand">PORTFOLIO DE
-            <span class="nav-brand-red">OCTAVE</span>
+          <span class="nav-brand">OCTAVE
+            <span class="nav-brand-red">LEJEUNE</span>
           </span>
 
 
@@ -173,15 +173,16 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="projects-grid">
 
         <a href="projet_aide_et_vous.php" class="project-card">
-          <img src="IMG/aideetvous.png" alt="Projet Aide&Vous">
+          <img src="IMG/Aide&amp;Vous/A&amp;Vhomepage.png" alt="Projet Aide&Vous">
         </a>
 
         <a href="projet_retro_revival.php" class="project-card">
           <img src="IMG/RetroRevival/homepage.png" alt="Projet Retro Revival">
         </a>
         
-        <a href="projet_aide_et_vous.php" class="project-card">
-          <img src="IMG/aideetvous.png" alt="Projet Aide&Vous">
+        <a href="projet_lely_horizon.php" class="project-card project-card-lely">
+          <span class="project-card-kicker">SQL Server</span>
+          <span class="project-card-name">Lely Horizon</span>
         </a>
 
         <a href="projet_retro_revival.php" class="project-card">
@@ -196,7 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <h2 class="about-title">About <span>Me</span></h2>
         <p class="about-intro">
           Étudiant en deuxieme année de BUT Informatique, je construis des projets web complets en apportant une
-          attention particuliere sur le design ainsi que d'autre projets personnels et profesionnel
+          attention particuliere sur le design, cela accompagné de plusieurs autres projets personnels et profesionnels
         </p>
       </div>
 
@@ -204,6 +205,8 @@ document.addEventListener("DOMContentLoaded", () => {
         <!--------------------------------- Parcours -------------------------------------->
         <article class="about-card">
           <h3 class="about-card-title">Parcours scolaire</h3>
+
+          
 
           <div class="timeline">
             <div class="timeline-item">
@@ -215,10 +218,26 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 <p class="timeline-place">IUT2 - Université Grenoble Alpes</p>
                 <p class="timeline-desc">
-                  Développement web, Programation Java/C++ et autre, mise en place de serveurs...
+                  Développement web, Programation Java/Synfony et autre, mise en place de serveurs...
                 </p>
               </div>
             </div>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-top">
+                  <span class="timeline-role">Stage Informatique - AMIRALYS Adventury</span>
+                  <span class="timeline-date">Mai - Juin 2026</span>
+                </div>
+                <p class="timeline-place">Artemare 01</p>
+                <p class="timeline-desc">
+                  Développement d'une extention d'application lourde
+                </p>
+              </div>
+            </div>
+
 
             <div class="timeline-item">
               <div class="timeline-dot"></div>
@@ -259,9 +278,19 @@ document.addEventListener("DOMContentLoaded", () => {
               <span class="chip">CSS</span>
               <span class="chip">Java</span>
               <span class="chip">Python</span>
+              <span class="chip">SQL (PostgreSQL, SQLServer...)</span>
               <span class="chip">PHP</span>
               <span class="chip">JavaScript</span>
-              <span class="chip">SQL (PostgreSQL)</span>
+              <span class="chip">C#</span>
+            </div>
+          </div>
+
+          <div class="chips-group">
+            <span class="chips-title">Frameworks</span>
+            <div class="chips">
+              <span class="chip">Laravel</span>
+              <span class="chip">Synfony</span>
+              <span class="chip">.NET</span>
             </div>
           </div>
 
@@ -269,17 +298,20 @@ document.addEventListener("DOMContentLoaded", () => {
             <span class="chips-title">Outils</span>
             <div class="chips">
               <span class="chip">VSCode</span>
+              <span class="chip">Android Studio</span>
               <span class="chip">IntelliJ</span>
               <span class="chip">Git - GitLab</span>
               <span class="chip">Debian - environnement linux</span>
+              <span class="chip">Windows Server</span>
+
             </div>
           </div>
 
           <div class="about-subblock">
             <h4 class="about-subtitle">Ce que j'apprecie faire</h4>
             <ul class="about-list">
-              <li>Interfaces propres, responsive, mode sombre</li>
-              <li>Structurer un projet (MVC, conventions, lisibilité)</li>
+              <li>Le design d'applications web et de sites web</li>
+              <li>Mener un projet à bout en touchant à tous les aspects</li>
             </ul>
           </div>
         </article>
@@ -287,45 +319,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         <!---------------------------- Reseaux -------------------------------->
-        <article class="about-card about-card-wide">
-          <h3 class="about-card-title">Réseaux</h3>
-
-          <div class="social-grid">
-            <a class="social-link" href="https://github.com/yue88" target="_blank" rel="noopener">
-              <span class="social-name">GitHub</span>
-              <span class="social-hint">github.com/yue88</span>
-            </a>
-
-            <a class="social-link" href="https://www.linkedin.com/in/octave-lejeune-91a65b34a/" target="_blank"
-              rel="noopener">
-              <span class="social-name">LinkedIn</span>
-              <span class="social-hint">linkedin.com/in/octave-lejeune-91a65b34a</span>
-            </a>
-
-            <a class="social-link" href="https://www.instagram.com/octave_ljn/" target="_blank" rel="noopener">
-              <span class="social-name">Instagram</span>
-              <span class="social-hint">@octave_ljn</span>
-            </a>
-
-            <a class="social-link" href="#" target="_blank" rel="noopener">
-              <span class="social-name">Portfolio</span>
-              <span class="social-hint">Lien public (optionnel)</span>
-            </a>
-          </div>
-
-          <p class="about-note">
-            Si un lien n'est plus valide n'hésitez pas à me contacter via le formulaire ci-dessous !
-          </p>
-        </article>
+      
       </div>
     </section>
 
 
     <section class="contact-section" id="section-contact">
+      
 
       <span class="contact-label">FORMULAIRE DE CONTACT</span>
+
+      
       <div class="contact-inner">
+
         <form class="contact-form" method="post">
+
 
           <div style="position:absolute; left:-9999px; top:-9999px;">
             <label for="website">Website</label>
@@ -374,8 +382,40 @@ document.addEventListener("DOMContentLoaded", () => {
           <p class="contact-note">Réponse sous 24 à 48h.</p>
         </form>
       </div>
+        <article class="about-card about-card-wide">
+          <h3 class="about-card-title">Réseaux</h3>
+
+          <div class="social-grid">
+            <a class="social-link" href="https://github.com/yue88" target="_blank" rel="noopener">
+              <span class="social-name">GitHub</span>
+              <span class="social-hint">github.com/yue88</span>
+            </a>
+
+            <a class="social-link" href="https://www.linkedin.com/in/octave-lejeune-91a65b34a/" target="_blank"
+              rel="noopener">
+              <span class="social-name">LinkedIn</span>
+              <span class="social-hint">linkedin.com/in/octave-lejeune-91a65b34a</span>
+            </a>
+
+            <a class="social-link" href="https://www.instagram.com/octave_ljn/" target="_blank" rel="noopener">
+              <span class="social-name">Instagram</span>
+              <span class="social-hint">@octave_ljn</span>
+            </a>
+
+            <a class="social-link" href="futur_site.php" target="_blank" rel="noopener">
+              <span class="social-name">Site Web </span>
+              <span class="social-hint">A-venir...</span>
+            </a>
+          </div>
+
+          <p class="about-note">
+            Si un lien n'est plus valide n'hésitez pas à me contacter via le formulaire ci-dessous !
+          </p>
+        </article>
+        
     </section>
 
+    
 
   </main>
 </body>
