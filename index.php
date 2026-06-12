@@ -172,21 +172,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
       <div class="projects-grid">
 
-        <a href="projet_aide_et_vous.php" class="project-card">
+        <a href="projet_aide_et_vous.php" class="project-card project-card-with-copy project-card-aide">
           <img src="IMG/Aide&amp;Vous/A&amp;Vhomepage.png" alt="Projet Aide&Vous">
+          <span class="project-card-kicker">Application web</span>
+          <span class="project-card-name">Aide&amp;Vous</span>
         </a>
 
-        <a href="projet_retro_revival.php" class="project-card">
+        <a href="projet_retro_revival.php" class="project-card project-card-with-copy project-card-retro">
           <img src="IMG/RetroRevival/homepage.png" alt="Projet Retro Revival">
+          <span class="project-card-kicker">E-commerce</span>
+          <span class="project-card-name">Retro Revival</span>
         </a>
         
-        <a href="projet_lely_horizon.php" class="project-card project-card-lely">
+        <article class="project-card project-card-lely">
+          <span class="project-card-badge">CLASSIFIED</span>
           <span class="project-card-kicker">SQL Server</span>
           <span class="project-card-name">Lely Horizon</span>
-        </a>
+        </article>
 
-        <a href="projet_retro_revival.php" class="project-card">
+        <a href="projet_retro_revival.php" class="project-card project-card-with-copy project-card-retro">
           <img src="IMG/RetroRevival/register.png" alt="Projet Retro Revival">
+          <span class="project-card-kicker">Inscription</span>
+          <span class="project-card-name">Retro Revival</span>
         </a>
 
       </div>
