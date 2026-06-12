@@ -8,6 +8,7 @@
   overflow-x: hidden;
 }
 
+
 .background-wrapper {
   position: fixed;
   inset: 0;
@@ -1315,3 +1316,4 @@ body {
   }
 }
 
+/*Probleme css resolution*/
