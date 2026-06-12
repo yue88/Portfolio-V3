@@ -309,6 +309,32 @@ body {
   bottom: 1.4rem;
 }
 
+.project-card-coming .project-card-status {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  transform: translate(-50%, -50%);
+}
+
+.project-card-coming {
+  background:
+    linear-gradient(rgba(196, 181, 253, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(196, 181, 253, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 20% 20%, rgba(196, 181, 253, 0.18), transparent 30%),
+    #12091f;
+  background-size: 34px 34px, 34px 34px, auto, auto;
+}
+
+.project-card-coming::after {
+  background: linear-gradient(180deg, rgba(18, 9, 31, 0.34) 0%, rgba(18, 9, 31, 0.82) 100%);
+}
+
 .project-card:hover {
   border-color: #dc2626;
   transform: translateY(-6px);

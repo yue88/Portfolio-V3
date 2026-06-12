@@ -190,10 +190,8 @@ document.addEventListener("DOMContentLoaded", () => {
           <span class="project-card-name">Lely Horizon</span>
         </article>
 
-        <a href="projet_retro_revival.php" class="project-card project-card-with-copy project-card-retro">
-          <img src="IMG/RetroRevival/register.png" alt="Projet Retro Revival">
-          <span class="project-card-kicker">Inscription</span>
-          <span class="project-card-name">Retro Revival</span>
+        <a href="projet_retro_revival.php" class="project-card project-card-with-copy project-card-retro project-card-coming">
+          <span class="project-card-status">EN COURS</span>
         </a>
 
       </div>
