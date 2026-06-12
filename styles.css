@@ -265,6 +265,7 @@ body {
 .project-card {
   background: #0a0a0a;
   border: 1px solid #18181b;
+  box-sizing: border-box;
   height: 240px;
   padding: 0;
   display: block;
@@ -341,11 +342,6 @@ body {
 }
 
 .project-card-lely {
-  padding: 1.7rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  gap: 0.6rem;
   background:
     linear-gradient(rgba(134, 239, 172, 0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(134, 239, 172, 0.08) 1px, transparent 1px),
@@ -353,6 +349,21 @@ body {
     #071a10;
   background-size: 34px 34px, 34px 34px, auto, auto;
   text-decoration: none;
+}
+
+.project-card-lely .project-card-kicker,
+.project-card-lely .project-card-name {
+  position: absolute;
+  left: 1.4rem;
+  z-index: 1;
+}
+
+.project-card-lely .project-card-kicker {
+  bottom: 4.4rem;
+}
+
+.project-card-lely .project-card-name {
+  bottom: 1.4rem;
 }
 
 .project-card-badge {
@@ -1395,5 +1406,3 @@ body {
     min-height: 300px;
   }
 }
-
-/*Probleme css resolution*/
